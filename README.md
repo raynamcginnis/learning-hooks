@@ -1,6 +1,17 @@
 # Overview
 
-This application makes use of React.js hooks useState, useEffect and useRef and represents a few different ways each can be used. 
+This application makes use of React.js hooks useState, useEffect and useRef and represents a few different ways each can be used.
+
+### Search
+sdfdkslj
+
+- useState
+
+### Accordion
+
+### Dropdown
+
+### Translate
 
 # Technologies
 
@@ -10,6 +21,8 @@ This application makes use of React.js hooks useState, useEffect and useRef and 
 # Integrations
 
 - Semantic UI
+- Wikipedia API
+- Google Translate API
 
 # Getting Started
 

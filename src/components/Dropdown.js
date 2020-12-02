@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // function that assigns key, and provides the labels of the options array from App.js
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ options, selected, onSelectedChange, label }) => {
     const [ open, setOpen] = useState(false);
     const ref = useRef();
 
@@ -37,28 +37,33 @@ document.body.removeEventListener('click', onBodyClick);
             onClick={() => 
                 onSelectedChange(option)}
             >
-                {option.label}
+                {option.value}
             </div>
         );
     });
+
 
     // returns label, and rendered options in a drop down menu
     return (
         <div ref={ref} className="ui form">
             <div className="field">
                 <label className="label">
-                    Select a Color:
+                    {label}
                 </label>
                 {/* When the drop down is clicked, setOpen is set to the opposite of whatever it is prior to being clicked*/}
                 {/* update classname based on if open is set to true or false. If open, add visible active classnames, else return empty string */}
                 <div onClick={() => setOpen(!open)}
                     className={`ui selection dropdown ${open ? 'visible active' : ''}`}>
                     <i className="dropdown icon"></i>
-                    <div className="text">{selected.label}</div>
+                    <div className="text">{selected.value}</div>
                     {/* update classname based on if open is set to true or false. If open, add visible transition classname, else return empty string */}
                     <div className={`menu ${open ? 'visible transition' : ''}`}>
                         {renderedOptions}
+
                     </div>
+                </div>
+                <div>
+                    <p>{selected.label}</p>
                 </div>
             </div>
         </div>
